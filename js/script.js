@@ -1,11 +1,26 @@
-const sequenza = document.getElementsByClassName('row');
-console.log(sequenza);
+const row = document.querySelector ('.row');
 
-for (let i = 0; i < 100; i++){
-  // creo l'elemento
-  const quadrato = document.createElement ('div.square')
+// Stampo i numero da 1 a 100
+for(let i = 1; i <= 100; i++){
+  const box = document.createElement('div');
+  box.innerHTML = i;
+  box.classList.add('square');
+  row.append(box);
 
-  // aggiungo l'elemento all'HTML
-  quadrato.innerHTML = 'elemento lista' + 1;
-  sequenza.append(quadrato);
+  if (i % 3 == 0 && i % 5 == 0){
+    box.innerHTML = 'FizzBuzz';
+    box.classList.add('coral');
+  }else if (i % 3 == 0){
+    box.innerHTML = 'green';
+    box.classList.add('coral');
+  }else if (i % 5 == 0){
+    box.innerHTML = 'Buzz';
+    box.classList.add('yellow');
+  }
+  else{
+    box.innerHTML = i
+    box.classList.add('blue');
+  }
 }
+
+
